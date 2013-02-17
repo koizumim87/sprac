@@ -9,6 +9,7 @@ abstract class Expr {
     case UnOp("-", UnOp("-", e)) => e
     case BinOp("+", e, Number(0)) => e
     case BinOp("*", e, Number(1)) => e
+    // case BinOp(_, e, e) => BinOp(_, e.simplifyTop, e) : will not work
     case _ => this
   }  
 }
